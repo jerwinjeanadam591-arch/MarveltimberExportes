@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="44" viewBox="0 0 64 44" role="img" aria-labelledby="midTitle">
+  <title id="midTitle">Middle East icon</title>
+  <rect width="64" height="44" rx="4" fill="#8a1538"/>
+  <rect x="0" y="22" width="64" height="22" rx="4" fill="#ffffff"/>
+  <circle cx="44" cy="18" r="6" fill="#ffd100"/>
+</svg>
