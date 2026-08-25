@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Sitemap: https://marveltimber.com/sitemap.xml
+# Replace domain above with your production domain before publishing

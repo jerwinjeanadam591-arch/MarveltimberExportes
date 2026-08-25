@@ -1,0 +1,422 @@
+const mobileBtn = document.querySelector('.mobile-btn');
+const mobilePanel = document.querySelector('.mobile-panel');
+
+if (mobileBtn && mobilePanel) {
+  mobileBtn.addEventListener('click', () => {
+    const isVisible = mobilePanel.style.display === 'block';
+    mobilePanel.style.display = isVisible ? 'none' : 'block';
+    mobileBtn.setAttribute('aria-expanded', String(!isVisible));
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') mobilePanel.style.display = 'none';
+  });
+}
+
+const navToggles = document.querySelectorAll('.nav-toggle');
+navToggles.forEach((btn) => {
+  const parent = btn.parentElement;
+  const menu = parent && parent.querySelector('.dropdown-menu');
+
+  btn.setAttribute('tabindex', '0');
+  btn.setAttribute('aria-haspopup', 'true');
+  btn.setAttribute('aria-expanded', 'false');
+
+  const updateDropdownState = (open) => {
+    if (!parent || !menu) return;
+    parent.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+  };
+
+  btn.addEventListener('click', () => {
+    if (!parent || !menu) return;
+    const isOpen = parent.classList.contains('is-open');
+    updateDropdownState(!isOpen);
+  });
+
+  btn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      if (!parent || !menu) return;
+      const isOpen = parent.classList.contains('is-open');
+      updateDropdownState(!isOpen);
+    }
+  });
+
+  parent?.addEventListener('mouseleave', () => updateDropdownState(false));
+});
+
+document.addEventListener('click', (event) => {
+  navToggles.forEach((btn) => {
+    const parent = btn.parentElement;
+    if (!parent || parent.contains(event.target)) return;
+    parent.classList.remove('is-open');
+    btn.setAttribute('aria-expanded', 'false');
+  });
+});
+
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const formData = new FormData(contactForm);
+    const name = (formData.get('fullName') || '').toString().trim();
+    const company = (formData.get('company') || '').toString().trim();
+    const email = (formData.get('email') || '').toString().trim();
+    const phone = (formData.get('phone') || '').toString().trim();
+    const product = (formData.get('product') || '').toString().trim();
+    const message = (formData.get('message') || '').toString().trim();
+
+    if (!name || !email || !message) {
+      const status = contactForm.querySelector('.form-status');
+      if (status) status.textContent = 'Please fill in your name, email and message.';
+      return;
+    }
+
+    const subject = encodeURIComponent(`New enquiry from ${name} - ${company || 'General enquiry'}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${phone}\nProduct interest: ${product}\n\nRequirements:\n${message}`
+    );
+
+    window.location.href = `mailto:sales@marveltimber.com?subject=${subject}&body=${body}`;
+
+    const status = contactForm.querySelector('.form-status');
+    if (status) status.textContent = 'Your enquiry draft is ready to send via email.';
+
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    if (submitBtn) {
+      submitBtn.textContent = 'Enquiry Prepared';
+      submitBtn.disabled = true;
+    }
+  });
+}
+
+const privacyBanner = document.getElementById('privacy-banner');
+if (privacyBanner) {
+  const buttons = privacyBanner.querySelectorAll('[data-privacy]');
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const choice = button.dataset.privacy;
+     localStorage.setItem('marvel-privacy', choice);
+      privacyBanner.style.display = 'none';
+    });
+  });
+  const savedChoice = localStorage.getItem('marvel-privacy');
+  if (savedChoice) privacyBanner.style.display = 'none';
+}
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const productCards = document.querySelectorAll('.product-card');
+const productSearch = document.getElementById('product-search');
+
+const applyProductFilter = () => {
+  const activeFilter = document.querySelector('.filter-btn.is-active')?.dataset.filter || 'all';
+  const term = (productSearch?.value || '').trim().toLowerCase();
+
+  productCards.forEach((card) => {
+    const cardCategory = (card.dataset.category || '').toLowerCase();
+    const cardName = (card.dataset.name || card.textContent || '').toLowerCase();
+    const matchesFilter = activeFilter === 'all' || cardCategory === activeFilter;
+    const matchesSearch = !term || cardName.includes(term);
+    card.classList.toggle('is-hidden', !(matchesFilter && matchesSearch));
+  });
+};
+
+filterButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    filterButtons.forEach((btn) => btn.classList.toggle('is-active', btn === button));
+    applyProductFilter();
+  });
+});
+
+if (productSearch) {
+  productSearch.addEventListener('input', applyProductFilter);
+}
+
+(function(){
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') document.documentElement.classList.add('user-is-tabbing');
+  });
+})();
+
+const heroSlides = Array.from(document.querySelectorAll('.hero-slide'));
+const heroDots = Array.from(document.querySelectorAll('.hero-dot'));
+const prevHeroBtn = document.querySelector('.hero-arrow.prev');
+const nextHeroBtn = document.querySelector('.hero-arrow.next');
+const heroSection = document.querySelector('.hero');
+const heroTagline = document.getElementById('hero-tagline');
+const heroLine1 = document.getElementById('hero-line-1');
+const heroLine2 = document.getElementById('hero-line-2');
+const heroLine3 = document.getElementById('hero-line-3');
+const heroSummary = document.getElementById('hero-summary');
+const heroCopy = document.querySelector('.hero-copy');
+
+const heroContent = [
+  {
+    eyebrow: 'Premium Timber & Agro Exporters',
+    lines: ['Premium Timber Products', 'for Construction,<em> Furniture</em> &amp; Industry', 'Built for global buyers'],
+    summary: 'We export reliable, quality-driven timber and agro commodities to clients across global markets with a focus on consistency, compliance, and on-time delivery.'
+  },
+  {
+    eyebrow: 'Industrial Supply • Reliable Export Execution',
+    lines: ['Global Supply for', 'Builders & Commercial <em>Projects</em>', 'Delivered with precision'],
+    summary: 'From sourcing to shipping, we coordinate dependable timber and industrial supply programs for manufacturers, contractors, and global trading partners.'
+  },
+  {
+    eyebrow: 'Agro Commodities • Certified & Ready',
+    lines: ['Premium Agro Exports', 'for Food, Feed & <em>Industrial</em> Buyers', 'Quality you can depend on'],
+    summary: 'Our agro portfolio is tailored for international buyers seeking consistent quality, clean handling, and efficient logistics across competitive markets.'
+  }
+];
+
+if (heroSlides.length > 0) {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let heroIndex = 0;
+  let heroIntervalId = null;
+
+  const triggerTyping = () => {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const lines = [heroLine1, heroLine2, heroLine3].filter(Boolean);
+    const typeDuration = 2000; // ms per line typing duration (slower, premium pace)
+    const interDelay = 300; // ms gap between line starts
+    const holdAfterAll = 1200; // ms to hold all lines before reset
+
+    // clear any previous timers stored on heroCopy
+    (heroCopy._typingTimers || []).forEach((id) => clearTimeout(id));
+    heroCopy._typingTimers = [];
+
+    lines.forEach((line, index) => {
+      // set per-line CSS vars for animation length & delay
+      line.style.setProperty('--type-duration', `${typeDuration}ms`);
+      // set steps based on number of characters to give a true letter-by-letter feel
+      const typedEl = line.querySelector('.typed-content');
+      const charCount = (typedEl && typedEl.textContent) ? typedEl.textContent.trim().length : 0;
+      line.style.setProperty('--type-steps', Math.max(3, charCount));
+
+      const startAt = index * (typeDuration + interDelay);
+      line.style.setProperty('--typing-delay', `0s`);
+
+      // schedule the start of typing for this line
+      const startId = setTimeout(() => {
+        line.classList.add('is-typing');
+      }, startAt);
+      heroCopy._typingTimers.push(startId);
+
+      // schedule keep (no-op) and then eventual removal happens after full cycle
+    });
+
+    const totalCycle = lines.length * (typeDuration + interDelay) - interDelay + holdAfterAll; // total time until reset
+
+    const resetId = setTimeout(() => {
+      lines.forEach((line) => {
+        line.classList.remove('is-typing');
+        // force reflow so next cycle restarts cleanly
+        void line.offsetWidth;
+      });
+    }, totalCycle);
+    heroCopy._typingTimers.push(resetId);
+
+    // return totalCycle so autoplay can sync if needed
+    return totalCycle;
+  };
+
+  const updateHeroText = (index) => {
+    if (!heroTagline || !heroLine1 || !heroLine2 || !heroLine3 || !heroSummary || !heroCopy) return;
+
+    const content = heroContent[index] || heroContent[0];
+    heroCopy.classList.add('is-transitioning');
+
+    window.setTimeout(() => {
+      heroTagline.textContent = content.eyebrow;
+
+    // helper: split a line's plain text into two halves (static then typed)
+    const buildSplit = (raw) => {
+      const tmp = document.createElement('div');
+      tmp.innerHTML = raw || '';
+      const txt = (tmp.textContent || '').trim();
+      if (!txt) return '<span class="static-part"></span><span class="typed-content"></span>';
+      const words = txt.split(/\s+/);
+      const splitAt = Math.ceil(words.length / 2);
+      const staticPart = words.slice(0, splitAt).join(' ');
+      const typedPart = words.slice(splitAt).join(' ');
+      const staticHtml = `<span class="static-part">${staticPart}${typedPart ? ' ' : ''}</span>`;
+      const typedHtml = `<span class="typed-content">${typedPart}</span>`;
+      return staticHtml + typedHtml;
+    };
+
+    heroLine1.innerHTML = buildSplit(content.lines[0]);
+    heroLine2.innerHTML = buildSplit(content.lines[1]);
+    heroLine3.innerHTML = buildSplit(content.lines[2]);
+    heroSummary.textContent = content.summary;
+    heroCopy.classList.remove('is-transitioning');
+
+    // trigger typing and capture cycle duration
+    const cycle = triggerTyping() || 0;
+
+    // if hero autoplay is running, reschedule it to match typing cycle for a cinematic effect
+    if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (cycle > 0) {
+        // restart autoplay interval with the new cycle length
+        if (window.__heroAutoPlayInterval) clearInterval(window.__heroAutoPlayInterval);
+        window.__heroAutoPlayInterval = setInterval(() => {
+          updateHeroSlide(heroIndex + 1);
+        }, cycle + 500);
+      }
+    }
+    }, 150);
+  };
+
+  const updateHeroSlide = (nextIndex) => {
+    heroIndex = (nextIndex + heroSlides.length) % heroSlides.length;
+
+    heroSlides.forEach((slide, index) => {
+      const isActive = index === heroIndex;
+      slide.classList.toggle('is-active', isActive);
+      slide.setAttribute('aria-hidden', String(!isActive));
+    });
+
+    heroDots.forEach((dot, index) => {
+      const isActive = index === heroIndex;
+      dot.classList.toggle('is-active', isActive);
+      dot.setAttribute('aria-selected', String(isActive));
+      dot.setAttribute('tabindex', isActive ? '0' : '-1');
+    });
+
+    updateHeroText(heroIndex);
+  };
+
+  const startHeroAutoPlay = () => {
+    if (prefersReducedMotion || heroSlides.length < 2) return;
+    clearInterval(heroIntervalId);
+    heroIntervalId = setInterval(() => {
+      updateHeroSlide(heroIndex + 1);
+    }, 5000);
+  };
+
+  const stopHeroAutoPlay = () => {
+    clearInterval(heroIntervalId);
+  };
+
+  prevHeroBtn?.addEventListener('click', () => {
+    updateHeroSlide(heroIndex - 1);
+    startHeroAutoPlay();
+  });
+
+  nextHeroBtn?.addEventListener('click', () => {
+    updateHeroSlide(heroIndex + 1);
+    startHeroAutoPlay();
+  });
+
+  heroDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      updateHeroSlide(index);
+      startHeroAutoPlay();
+    });
+  });
+
+  heroSection?.addEventListener('mouseenter', stopHeroAutoPlay);
+  heroSection?.addEventListener('mouseleave', startHeroAutoPlay);
+  heroSection?.addEventListener('focusin', stopHeroAutoPlay);
+  heroSection?.addEventListener('focusout', startHeroAutoPlay);
+
+  updateHeroSlide(0);
+  startHeroAutoPlay();
+}
+
+/* --- Inject WhatsApp button and language dropdown (applies across pages) --- */
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    // WhatsApp floating action button (injected so all pages get it without editing each HTML file)
+    if (!document.querySelector('.whatsapp-button')) {
+      const waNumber = '255700000000'; // replace with business number if needed
+      const defaultMsg = encodeURIComponent('Hello Marvel Timber Exporters, I would like to enquire about your products.');
+      const waAnchor = document.createElement('a');
+      waAnchor.className = 'whatsapp-button';
+      waAnchor.href = `https://wa.me/${waNumber}?text=${defaultMsg}`;
+      waAnchor.target = '_blank';
+      waAnchor.rel = 'noopener noreferrer';
+      waAnchor.setAttribute('aria-label', 'Chat with Marvel on WhatsApp');
+      waAnchor.innerHTML = `
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.52 3.48A11.9 11.9 0 0 0 12 0C5.373 0 .01 5.373 0 12c0 2.13.56 4.21 1.62 6.03L0 24l6.24-1.6A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12 0-3.2-1.25-6.18-3.48-8.52zM12 21.6c-1.5 0-2.98-.4-4.26-1.16l-.31-.19-3.72.96.99-3.63-.2-.31A8.4 8.4 0 0 1 3.6 12 8.4 8.4 0 0 1 12 3.6 8.4 8.4 0 0 1 20.4 12 8.4 8.4 0 0 1 12 21.6zm4.34-6.28c-.24-.12-1.44-.72-1.66-.8-.22-.08-.38-.12-.54.12s-.62.8-.76.96c-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.6-1.2-1.34-1.34-1.58-.14-.24-.02-.36.1-.48.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16 0-.3-.06-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4l-.46-.01c-.14 0-.36.06-.56.26s-.74.72-.74 1.76c0 1.04.76 2.04.86 2.18.1.14 1.48 2.36 3.58 3.3 2.1.94 2.1.62 2.48.58.38-.04 1.44-.58 1.64-1.14.2-.54.2-.98.14-1.08-.06-.12-.22-.18-.46-.3z"/>
+        </svg>`;
+      document.body.appendChild(waAnchor);
+    }
+
+    // Language dropdown injected into desktop nav
+    const mainNav = document.querySelector('.main-nav');
+    if (mainNav && !document.querySelector('.lang-dropdown')) {
+      const langDropdown = document.createElement('div');
+      langDropdown.className = 'nav-dropdown lang-dropdown';
+      langDropdown.innerHTML = `
+        <button type="button" class="nav-toggle lang-toggle" aria-haspopup="true" aria-expanded="false">EN <span>▾</span></button>
+        <div class="dropdown-menu lang-menu" aria-hidden="true">
+          <a href="?lang=af" data-lang="af">Afrikaans</a>
+          <a href="?lang=zh" data-lang="zh">Chinese</a>
+          <a href="?lang=fr" data-lang="fr">French</a>
+          <a href="?lang=de" data-lang="de">German</a>
+          <a href="?lang=ar" data-lang="ar">Arabic</a>
+          <a href="?lang=it" data-lang="it">Italiano</a>
+          <a href="?lang=en" data-lang="en">English</a>
+        </div>`;
+      mainNav.appendChild(langDropdown);
+
+      const toggle = langDropdown.querySelector('.lang-toggle');
+      const menu = langDropdown.querySelector('.lang-menu');
+
+      const setOpen = (open) => {
+        langDropdown.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        menu.setAttribute('aria-hidden', String(!open));
+      };
+
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setOpen(!langDropdown.classList.contains('is-open'));
+      });
+
+      // close on outside click
+      document.addEventListener('click', (e) => {
+        if (!langDropdown.contains(e.target)) setOpen(false);
+      });
+
+      // optionally: update language selection UI / remember preference
+      menu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          // example behaviour: navigate to same page with lang param (href already set), and update label
+          const lang = link.dataset.lang || 'en';
+          toggle.innerHTML = `${link.textContent} <span>▾</span>`;
+          setOpen(false);
+        });
+      });
+    }
+
+    // Replace mobile placeholder language anchor with an accessible details list
+    const mobileLinks = document.querySelector('.mobile-links');
+    if (mobileLinks) {
+      const mobileLangAnchor = mobileLinks.querySelector('.mobile-lang');
+      if (mobileLangAnchor) {
+        const langList = document.createElement('div');
+        langList.className = 'mobile-lang-list';
+        langList.innerHTML = `
+          <details>
+            <summary>Language: EN</summary>
+            <ul>
+              <li><a href="?lang=af">Afrikaans</a></li>
+              <li><a href="?lang=zh">Chinese</a></li>
+              <li><a href="?lang=fr">French</a></li>
+              <li><a href="?lang=de">German</a></li>
+              <li><a href="?lang=ar">Arabic</a></li>
+              <li><a href="?lang=it">Italiano</a></li>
+              <li><a href="?lang=en">English</a></li>
+            </ul>
+          </details>`;
+        mobileLangAnchor.parentElement.replaceChild(langList, mobileLangAnchor);
+      }
+    }
+  } catch (err) {
+    // non-fatal — don't break page behavior
+    console.error('UI enhancements (lang/whatsapp) failed', err);
+  }
+});
