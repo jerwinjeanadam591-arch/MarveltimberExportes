@@ -163,9 +163,34 @@ const heroContent = [
     summary: 'From sourcing to shipping, we coordinate dependable timber and industrial supply programs for manufacturers, contractors, and global trading partners.'
   },
   {
+    eyebrow: 'Export Ready Timber Stock',
+    lines: ['Premium Export Wood', 'for Joinery & <em>Construction</em>', 'Ready to ship'],
+    summary: 'Our export-grade inventory is prepared for international buyers who need quality, consistency and dependable turnaround times.'
+  },
+  {
+    eyebrow: 'Precision Processing • Quality Controlled',
+    lines: ['Processed to Spec', 'for Manufacturers & <em>Distributors</em>', 'Built for repeat orders'],
+    summary: 'From sawing and drying to finishing and inspection, we maintain quality consistency across every stage of production.'
+  },
+  {
+    eyebrow: 'Product Variety • Reliable Sourcing',
+    lines: ['Diverse Timber Range', 'for Interior, Exterior & <em>Industrial</em> Use', 'Consistently supplied'],
+    summary: 'We source and supply a wide range of timber products tailored for construction, furniture, panel, and industrial buyers.'
+  },
+  {
     eyebrow: 'Agro Commodities • Certified & Ready',
     lines: ['Premium Agro Exports', 'for Food, Feed & <em>Industrial</em> Buyers', 'Quality you can depend on'],
     summary: 'Our agro portfolio is tailored for international buyers seeking consistent quality, clean handling, and efficient logistics across competitive markets.'
+  },
+  {
+    eyebrow: 'Packing & Documentation • Export Ready',
+    lines: ['Clean Handling', 'for Safe Global <em>Shipment</em>', 'Operated with care'],
+    summary: 'Every shipment is prepared with careful packing, labeling and export documentation to keep your supply chain moving smoothly.'
+  },
+  {
+    eyebrow: 'Partnered Delivery • End-to-End Support',
+    lines: ['From Source to', 'Port, Factory & <em>Customer</em>', 'We move with you'],
+    summary: 'Our team supports sourcing, processing, packing and logistics so buyers receive a dependable and transparent export experience.'
   }
 ];
 
