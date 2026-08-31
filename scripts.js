@@ -163,34 +163,9 @@ const heroContent = [
     summary: 'From sourcing to shipping, we coordinate dependable timber and industrial supply programs for manufacturers, contractors, and global trading partners.'
   },
   {
-    eyebrow: 'Export Ready Timber Stock',
-    lines: ['Premium Export Wood', 'for Joinery & <em>Construction</em>', 'Ready to ship'],
-    summary: 'Our export-grade inventory is prepared for international buyers who need quality, consistency and dependable turnaround times.'
-  },
-  {
-    eyebrow: 'Precision Processing • Quality Controlled',
-    lines: ['Processed to Spec', 'for Manufacturers & <em>Distributors</em>', 'Built for repeat orders'],
-    summary: 'From sawing and drying to finishing and inspection, we maintain quality consistency across every stage of production.'
-  },
-  {
-    eyebrow: 'Product Variety • Reliable Sourcing',
-    lines: ['Diverse Timber Range', 'for Interior, Exterior & <em>Industrial</em> Use', 'Consistently supplied'],
-    summary: 'We source and supply a wide range of timber products tailored for construction, furniture, panel, and industrial buyers.'
-  },
-  {
     eyebrow: 'Agro Commodities • Certified & Ready',
     lines: ['Premium Agro Exports', 'for Food, Feed & <em>Industrial</em> Buyers', 'Quality you can depend on'],
     summary: 'Our agro portfolio is tailored for international buyers seeking consistent quality, clean handling, and efficient logistics across competitive markets.'
-  },
-  {
-    eyebrow: 'Packing & Documentation • Export Ready',
-    lines: ['Clean Handling', 'for Safe Global <em>Shipment</em>', 'Operated with care'],
-    summary: 'Every shipment is prepared with careful packing, labeling and export documentation to keep your supply chain moving smoothly.'
-  },
-  {
-    eyebrow: 'Partnered Delivery • End-to-End Support',
-    lines: ['From Source to', 'Port, Factory & <em>Customer</em>', 'We move with you'],
-    summary: 'Our team supports sourcing, processing, packing and logistics so buyers receive a dependable and transparent export experience.'
   }
 ];
 
@@ -354,7 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     // WhatsApp floating action button (injected so all pages get it without editing each HTML file)
     if (!document.querySelector('.whatsapp-button')) {
-      const waNumber = '255700000000'; // replace with business number if needed
+      const waNumber = '255758458404';
       const defaultMsg = encodeURIComponent('Hello Marvel Timber Exporters, I would like to enquire about your products.');
       const waAnchor = document.createElement('a');
       waAnchor.className = 'whatsapp-button';
@@ -369,77 +344,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.appendChild(waAnchor);
     }
 
-    // Language dropdown injected into desktop nav
-    const mainNav = document.querySelector('.main-nav');
-    if (mainNav && !document.querySelector('.lang-dropdown')) {
-      const langDropdown = document.createElement('div');
-      langDropdown.className = 'nav-dropdown lang-dropdown';
-      langDropdown.innerHTML = `
-        <button type="button" class="nav-toggle lang-toggle" aria-haspopup="true" aria-expanded="false">EN <span>▾</span></button>
-        <div class="dropdown-menu lang-menu" aria-hidden="true">
-          <a href="?lang=af" data-lang="af">Afrikaans</a>
-          <a href="?lang=zh" data-lang="zh">Chinese</a>
-          <a href="?lang=fr" data-lang="fr">French</a>
-          <a href="?lang=de" data-lang="de">German</a>
-          <a href="?lang=ar" data-lang="ar">Arabic</a>
-          <a href="?lang=it" data-lang="it">Italiano</a>
-          <a href="?lang=en" data-lang="en">English</a>
-        </div>`;
-      mainNav.appendChild(langDropdown);
-
-      const toggle = langDropdown.querySelector('.lang-toggle');
-      const menu = langDropdown.querySelector('.lang-menu');
-
-      const setOpen = (open) => {
-        langDropdown.classList.toggle('is-open', open);
-        toggle.setAttribute('aria-expanded', String(open));
-        menu.setAttribute('aria-hidden', String(!open));
-      };
-
-      toggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        setOpen(!langDropdown.classList.contains('is-open'));
-      });
-
-      // close on outside click
-      document.addEventListener('click', (e) => {
-        if (!langDropdown.contains(e.target)) setOpen(false);
-      });
-
-      // optionally: update language selection UI / remember preference
-      menu.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', (e) => {
-          // example behaviour: navigate to same page with lang param (href already set), and update label
-          const lang = link.dataset.lang || 'en';
-          toggle.innerHTML = `${link.textContent} <span>▾</span>`;
-          setOpen(false);
-        });
-      });
-    }
-
-    // Replace mobile placeholder language anchor with an accessible details list
-    const mobileLinks = document.querySelector('.mobile-links');
-    if (mobileLinks) {
-      const mobileLangAnchor = mobileLinks.querySelector('.mobile-lang');
-      if (mobileLangAnchor) {
-        const langList = document.createElement('div');
-        langList.className = 'mobile-lang-list';
-        langList.innerHTML = `
-          <details>
-            <summary>Language: EN</summary>
-            <ul>
-              <li><a href="?lang=af">Afrikaans</a></li>
-              <li><a href="?lang=zh">Chinese</a></li>
-              <li><a href="?lang=fr">French</a></li>
-              <li><a href="?lang=de">German</a></li>
-              <li><a href="?lang=ar">Arabic</a></li>
-              <li><a href="?lang=it">Italiano</a></li>
-              <li><a href="?lang=en">English</a></li>
-            </ul>
-          </details>`;
-        mobileLangAnchor.parentElement.replaceChild(langList, mobileLangAnchor);
-      }
-    }
   } catch (err) {
     // non-fatal — don't break page behavior
     console.error('UI enhancements (lang/whatsapp) failed', err);

@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
-Sitemap: https://marveltimber.com/sitemap.xml
+Sitemap: https://marveltimber.co.tz/sitemap.xml
 # Replace domain above with your production domain before publishing
