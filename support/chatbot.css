@@ -3,12 +3,13 @@
 #marvel-chat-widget {
   position: fixed;
   bottom: 1.5rem;
-  right: 1.5rem;
+  left: 1.5rem;
   z-index: 2300;
-  width: 0;
-  height: 0;
+  width: 60px;
+  height: 60px;
   overflow: hidden;
   transition: all 0.3s ease;
+  border-radius: 50%;
 }
 
 #marvel-chat-widget.open {
@@ -22,21 +23,37 @@
 .marvel-chat-header {
   background: linear-gradient(135deg, #cf9d6c 0%, #9a5d38 100%);
   color: white;
-  padding: 1.2rem 1.4rem;
+  padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  border-radius: 18px 18px 0 0;
+  border-radius: 50%;
   user-select: none;
+  width: 60px;
+  height: 60px;
+  min-height: 60px;
+  position: relative;
+}
+
+#marvel-chat-widget.open .marvel-chat-header {
+  border-radius: 18px 18px 0 0;
+  height: auto;
+  min-height: unset;
+  padding: 1.2rem 1.4rem;
+  width: 100%;
 }
 
 .marvel-chat-title {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 0.8rem;
   font-weight: 700;
   font-size: 1.05rem;
+}
+
+#marvel-chat-widget.open .marvel-chat-title {
+  display: flex;
 }
 
 .marvel-chat-icon {
@@ -44,18 +61,28 @@
 }
 
 .marvel-chat-toggle {
-  background: rgba(255,255,255,0.2);
+  background: none;
   border: 0;
   color: white;
   cursor: pointer;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.2s ease;
   font-weight: bold;
+  position: static;
+  padding: 0;
+  margin: 0;
+}
+
+#marvel-chat-widget.open .marvel-chat-toggle {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.2);
 }
 
 .marvel-chat-toggle:hover {
@@ -63,15 +90,28 @@
 }
 
 .marvel-chat-close {
+  font-size: 1.8rem;
+  display: block;
+}
+
+#marvel-chat-widget.open .marvel-chat-close {
   font-size: 1.3rem;
 }
 
+#marvel-chat-widget.open .marvel-chat-toggle:hover {
+  background: rgba(255,255,255,0.3);
+}
+
 .marvel-chat-body {
-  display: flex;
+  display: none;
   flex-direction: column;
   height: calc(600px - 65px);
   background: #f9f6f2;
   border-radius: 0 0 18px 18px;
+}
+
+#marvel-chat-widget.open .marvel-chat-body {
+  display: flex;
 }
 
 .marvel-chat-messages {

@@ -74,8 +74,14 @@ class MarvelChatbot {
     const input = document.getElementById('marvel-chat-input');
     const header = document.getElementById('marvel-chat-header');
 
-    toggleBtn.addEventListener('click', () => this.toggleChat());
-    header.addEventListener('click', () => this.toggleChat());
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      this.toggleChat();
+    });
+    header.addEventListener('click', (e) => {
+      e.stopPropagation();
+      this.toggleChat();
+    });
     
     sendBtn.addEventListener('click', () => this.sendMessage());
     input.addEventListener('keypress', (e) => {
