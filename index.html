@@ -793,6 +793,75 @@
     <script src="support/chatbot.js"></script>
     <script src="/support/lead-modal.js"></script>
     <script src="/support/hero-typing.js"></script>
+    <script>
+// Inline fallback for hero typing animation to ensure it runs even if external script is blocked or delayed
+(function(){
+  function sleep(ms){return new Promise(r=>setTimeout(r, ms));}
+
+  function createTyper(el){
+    let items = [];
+    try{ items = JSON.parse(el.getAttribute('data-typed')) }catch(e){ items = [el.textContent.trim()] }
+    if(!items || !items.length) return null;
+
+    let index = 0;
+    const typingSpeed = parseInt(el.getAttribute('data-typing-speed')) || 45;
+    const pauseAfter = parseInt(el.getAttribute('data-pause-after')) || 1200;
+    const pauseBetween = parseInt(el.getAttribute('data-pause-between')) || 400;
+    const deletingSpeed = parseInt(el.getAttribute('data-deleting-speed')) || 25;
+    let running = true;
+
+    el.setAttribute('aria-live','polite');
+    el.classList.add('typing');
+
+    async function run(){
+      while(running){
+        const text = items[index % items.length] || '';
+        for(let i=0;i<=text.length;i++){
+          el.textContent = text.slice(0,i);
+          await sleep(typingSpeed);
+          if(!running) return;
+        }
+        await sleep(pauseAfter);
+        if(!running) return;
+        for(let i=text.length;i>=0;i--){
+          el.textContent = text.slice(0,i);
+          await sleep(deletingSpeed);
+          if(!running) return;
+        }
+        await sleep(pauseBetween);
+        index++;
+      }
+    }
+
+    run().catch(()=>{});
+
+    return { stop(){ running = false; } };
+  }
+
+  function startAll(){
+    const els = document.querySelectorAll('.typed-text');
+    if(!els.length) return;
+
+    els.forEach(el => {
+      if(el.__typer) return;
+      el.__typer = createTyper(el);
+      const mo = new MutationObserver((records)=>{
+        for(const r of records){
+          if(r.type === 'attributes' && r.attributeName === 'data-typed'){
+            if(el.__typer && el.__typer.stop) el.__typer.stop();
+            el.__typer = createTyper(el);
+          }
+        }
+      });
+      mo.observe(el, { attributes: true });
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', ()=>{ startAll(); setTimeout(startAll,600);} );
+  } else { startAll(); setTimeout(startAll,600); }
+})();
+    </script>
     <script src="/support/translation.js"></script>
   </body>
 </html>
