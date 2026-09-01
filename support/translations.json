@@ -1,0 +1,382 @@
+{
+  "en": {
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "services": "Services",
+      "about": "About",
+      "contact": "Contact",
+      "language": "Language",
+      "requestQuote": "Request Quote",
+      "productOverview": "Overview",
+      "allProducts": "All Products",
+      "allTimberAgro": "All Timber & Agro",
+      "timber": "Timber",
+      "agro": "Agro",
+      "serviceOverview": "Service Overview",
+      "quality": "Quality & Compliance",
+      "supply": "Supply Network",
+      "insights": "Insights"
+    },
+    "header": {
+      "topstrip": "Global timber and agro supply solutions",
+      "phone1": "+255 758 458 404",
+      "phone2": "+255 698 783 287",
+      "email": "marveltimberexporters@gmail.com"
+    },
+    "products": {
+      "teakwood": "Teakwood",
+      "pinewood": "Pinewood",
+      "coreVeneer": "Core Veneer",
+      "pinewoodBlockBoard": "Pinewood Block Board",
+      "fingerJointBoard": "Finger Joint Board",
+      "pinewoodScrap": "Pinewood Scrap",
+      "oilSeeds": "Oil Seeds",
+      "spices": "Spices",
+      "pulsesAndBeans": "Pulses & Beans",
+      "otherCommodities": "Other Commodities",
+      "industries": "Industries"
+    },
+    "privacy": {
+      "title": "Privacy & Cookies",
+      "description": "We use cookies to improve website performance and understand visitor activity. By continuing, you agree to our cookie use.",
+      "accept": "Accept",
+      "decline": "Decline"
+    },
+    "footer": {
+      "about": "About Marvel Timber Exporters",
+      "contact": "Contact Us",
+      "services": "Services",
+      "quality": "Quality & Compliance",
+      "suppyNetwork": "Supply Network",
+      "rights": "All rights reserved.",
+      "company": "Marvel Timber Exporters"
+    },
+    "hero": {
+      "title": "Premium Global Timber & Agro Solutions",
+      "subtitle": "Trusted supplier of premium timber and agricultural products to international markets",
+      "cta": "Explore Our Products"
+    },
+    "features": {
+      "quality": "Premium Quality",
+      "reliable": "Reliable Sourcing",
+      "efficient": "Efficient Delivery",
+      "certified": "Certified & Compliant"
+    },
+    "pages": {
+      "home": "Home | Marvel Timber Exporters",
+      "products": "Products | Marvel Timber Exporters",
+      "services": "Services | Marvel Timber Exporters",
+      "about": "About | Marvel Timber Exporters",
+      "contact": "Contact | Marvel Timber Exporters",
+      "quality": "Quality & Compliance | Marvel Timber Exporters",
+      "supply": "Supply Network | Marvel Timber Exporters",
+      "insights": "Insights | Marvel Timber Exporters",
+      "industries": "Industries | Marvel Timber Exporters"
+    }
+  },
+  "fr": {
+    "nav": {
+      "home": "Accueil",
+      "products": "Produits",
+      "services": "Services",
+      "about": "À propos",
+      "contact": "Contact",
+      "language": "Langue",
+      "requestQuote": "Demander un devis",
+      "productOverview": "Aperçu",
+      "allProducts": "Tous les produits",
+      "allTimberAgro": "Tous les bois et produits agricoles",
+      "timber": "Bois",
+      "agro": "Agriculture",
+      "serviceOverview": "Aperçu des services",
+      "quality": "Qualité et conformité",
+      "supply": "Réseau d'approvisionnement",
+      "insights": "Aperçus"
+    },
+    "header": {
+      "topstrip": "Solutions mondiales de bois et produits agricoles",
+      "phone1": "+255 758 458 404",
+      "phone2": "+255 698 783 287",
+      "email": "marveltimberexporters@gmail.com"
+    },
+    "products": {
+      "teakwood": "Bois de teck",
+      "pinewood": "Bois de pin",
+      "coreVeneer": "Placage de noyau",
+      "pinewoodBlockBoard": "Planche en blocs de pin",
+      "fingerJointBoard": "Planche à joints à doigts",
+      "pinewoodScrap": "Chutes de bois de pin",
+      "oilSeeds": "Graines oléagineuses",
+      "spices": "Épices",
+      "pulsesAndBeans": "Légumineuses et fèves",
+      "otherCommodities": "Autres produits de base",
+      "industries": "Industries"
+    },
+    "privacy": {
+      "title": "Confidentialité et cookies",
+      "description": "Nous utilisons les cookies pour améliorer les performances du site Web et comprendre l'activité des visiteurs. En continuant, vous acceptez notre utilisation des cookies.",
+      "accept": "Accepter",
+      "decline": "Refuser"
+    },
+    "footer": {
+      "about": "À propos de Marvel Timber Exporters",
+      "contact": "Nous contacter",
+      "services": "Services",
+      "quality": "Qualité et conformité",
+      "suppyNetwork": "Réseau d'approvisionnement",
+      "rights": "Tous droits réservés.",
+      "company": "Marvel Timber Exporters"
+    },
+    "hero": {
+      "title": "Solutions premium de bois et produits agricoles mondiaux",
+      "subtitle": "Fournisseur de confiance de bois premium et produits agricoles vers les marchés internationaux",
+      "cta": "Explorer nos produits"
+    },
+    "features": {
+      "quality": "Qualité Premium",
+      "reliable": "Approvisionnement fiable",
+      "efficient": "Livraison efficace",
+      "certified": "Certifié et conforme"
+    },
+    "pages": {
+      "home": "Accueil | Marvel Timber Exporters",
+      "products": "Produits | Marvel Timber Exporters",
+      "services": "Services | Marvel Timber Exporters",
+      "about": "À propos | Marvel Timber Exporters",
+      "contact": "Contact | Marvel Timber Exporters",
+      "quality": "Qualité et conformité | Marvel Timber Exporters",
+      "supply": "Réseau d'approvisionnement | Marvel Timber Exporters",
+      "insights": "Aperçus | Marvel Timber Exporters",
+      "industries": "Industries | Marvel Timber Exporters"
+    }
+  },
+  "ar": {
+    "nav": {
+      "home": "الرئيسية",
+      "products": "المنتجات",
+      "services": "الخدمات",
+      "about": "عن",
+      "contact": "اتصل بنا",
+      "language": "اللغة",
+      "requestQuote": "طلب عرض أسعار",
+      "productOverview": "نظرة عامة",
+      "allProducts": "جميع المنتجات",
+      "allTimberAgro": "جميع الأخشاب والمنتجات الزراعية",
+      "timber": "الأخشاب",
+      "agro": "الزراعة",
+      "serviceOverview": "نظرة عامة على الخدمات",
+      "quality": "الجودة والامتثال",
+      "supply": "شبكة التوريد",
+      "insights": "الرؤى"
+    },
+    "header": {
+      "topstrip": "حلول الأخشاب والمنتجات الزراعية العالمية",
+      "phone1": "+255 758 458 404",
+      "phone2": "+255 698 783 287",
+      "email": "marveltimberexporters@gmail.com"
+    },
+    "products": {
+      "teakwood": "خشب الساج",
+      "pinewood": "خشب الصنوبر",
+      "coreVeneer": "قشرة النواة",
+      "pinewoodBlockBoard": "لوح كتلة الصنوبر",
+      "fingerJointBoard": "لوح المفصل الإصبع",
+      "pinewoodScrap": "نفايات خشب الصنوبر",
+      "oilSeeds": "البذور الزيتية",
+      "spices": "التوابل",
+      "pulsesAndBeans": "النبضات والفول",
+      "otherCommodities": "السلع الأخرى",
+      "industries": "الصناعات"
+    },
+    "privacy": {
+      "title": "الخصوصية وملفات تعريف الارتباط",
+      "description": "نحن نستخدم ملفات تعريف الارتباط لتحسين أداء الموقع وفهم نشاط الزائر. بالمتابعة، فإنك توافق على استخدامنا لملفات تعريف الارتباط.",
+      "accept": "قبول",
+      "decline": "رفض"
+    },
+    "footer": {
+      "about": "حول Marvel Timber Exporters",
+      "contact": "اتصل بنا",
+      "services": "الخدمات",
+      "quality": "الجودة والامتثال",
+      "suppyNetwork": "شبكة التوريد",
+      "rights": "جميع الحقوق محفوظة.",
+      "company": "Marvel Timber Exporters"
+    },
+    "hero": {
+      "title": "حلول الأخشاب والمنتجات الزراعية العالمية المتميزة",
+      "subtitle": "مورد موثوق من الأخشاب المتميزة والمنتجات الزراعية للأسواق الدولية",
+      "cta": "استكشف منتجاتنا"
+    },
+    "features": {
+      "quality": "جودة متميزة",
+      "reliable": "مصدر موثوق",
+      "efficient": "تسليم فعال",
+      "certified": "معتمد وممتثل"
+    },
+    "pages": {
+      "home": "الرئيسية | Marvel Timber Exporters",
+      "products": "المنتجات | Marvel Timber Exporters",
+      "services": "الخدمات | Marvel Timber Exporters",
+      "about": "عن | Marvel Timber Exporters",
+      "contact": "اتصل بنا | Marvel Timber Exporters",
+      "quality": "الجودة والامتثال | Marvel Timber Exporters",
+      "supply": "شبكة التوريد | Marvel Timber Exporters",
+      "insights": "الرؤى | Marvel Timber Exporters",
+      "industries": "الصناعات | Marvel Timber Exporters"
+    }
+  },
+  "de": {
+    "nav": {
+      "home": "Startseite",
+      "products": "Produkte",
+      "services": "Dienstleistungen",
+      "about": "Über uns",
+      "contact": "Kontakt",
+      "language": "Sprache",
+      "requestQuote": "Angebot anfordern",
+      "productOverview": "Übersicht",
+      "allProducts": "Alle Produkte",
+      "allTimberAgro": "Alle Holz- und Agrarprodukte",
+      "timber": "Holz",
+      "agro": "Landwirtschaft",
+      "serviceOverview": "Dienstleistungsübersicht",
+      "quality": "Qualität und Compliance",
+      "supply": "Lieferkette",
+      "insights": "Einblicke"
+    },
+    "header": {
+      "topstrip": "Globale Holz- und Agrarproduktlösungen",
+      "phone1": "+255 758 458 404",
+      "phone2": "+255 698 783 287",
+      "email": "marveltimberexporters@gmail.com"
+    },
+    "products": {
+      "teakwood": "Teakholz",
+      "pinewood": "Kiefernholz",
+      "coreVeneer": "Kernfurnier",
+      "pinewoodBlockBoard": "Kiefernblocktafel",
+      "fingerJointBoard": "Fingergelenkplatte",
+      "pinewoodScrap": "Kiefernholzabfall",
+      "oilSeeds": "Ölsaaten",
+      "spices": "Gewürze",
+      "pulsesAndBeans": "Hülsenfrüchte und Bohnen",
+      "otherCommodities": "Andere Waren",
+      "industries": "Branchen"
+    },
+    "privacy": {
+      "title": "Datenschutz und Cookies",
+      "description": "Wir verwenden Cookies, um die Website-Leistung zu verbessern und die Besucheraktivität zu verstehen. Wenn Sie fortfahren, stimmen Sie unserer Cookie-Verwendung zu.",
+      "accept": "Akzeptieren",
+      "decline": "Ablehnen"
+    },
+    "footer": {
+      "about": "Über Marvel Timber Exporters",
+      "contact": "Kontaktieren Sie uns",
+      "services": "Dienstleistungen",
+      "quality": "Qualität und Compliance",
+      "suppyNetwork": "Lieferkette",
+      "rights": "Alle Rechte vorbehalten.",
+      "company": "Marvel Timber Exporters"
+    },
+    "hero": {
+      "title": "Premium-Holz- und Agrarproduktlösungen weltweit",
+      "subtitle": "Vertrauenswürdiger Anbieter von Premium-Holz und Agrarprodukten für internationale Märkte",
+      "cta": "Erkunden Sie unsere Produkte"
+    },
+    "features": {
+      "quality": "Premium-Qualität",
+      "reliable": "Zuverlässige Beschaffung",
+      "efficient": "Effiziente Lieferung",
+      "certified": "Zertifiziert und konform"
+    },
+    "pages": {
+      "home": "Startseite | Marvel Timber Exporters",
+      "products": "Produkte | Marvel Timber Exporters",
+      "services": "Dienstleistungen | Marvel Timber Exporters",
+      "about": "Über uns | Marvel Timber Exporters",
+      "contact": "Kontakt | Marvel Timber Exporters",
+      "quality": "Qualität und Compliance | Marvel Timber Exporters",
+      "supply": "Lieferkette | Marvel Timber Exporters",
+      "insights": "Einblicke | Marvel Timber Exporters",
+      "industries": "Branchen | Marvel Timber Exporters"
+    }
+  },
+  "es": {
+    "nav": {
+      "home": "Inicio",
+      "products": "Productos",
+      "services": "Servicios",
+      "about": "Acerca de",
+      "contact": "Contacto",
+      "language": "Idioma",
+      "requestQuote": "Solicitar cotización",
+      "productOverview": "Descripción general",
+      "allProducts": "Todos los productos",
+      "allTimberAgro": "Toda la madera y productos agrícolas",
+      "timber": "Madera",
+      "agro": "Agricultura",
+      "serviceOverview": "Descripción general del servicio",
+      "quality": "Calidad y cumplimiento",
+      "supply": "Red de suministro",
+      "insights": "Perspectivas"
+    },
+    "header": {
+      "topstrip": "Soluciones globales de madera y productos agrícolas",
+      "phone1": "+255 758 458 404",
+      "phone2": "+255 698 783 287",
+      "email": "marveltimberexporters@gmail.com"
+    },
+    "products": {
+      "teakwood": "Madera de teca",
+      "pinewood": "Madera de pino",
+      "coreVeneer": "Chapado de núcleo",
+      "pinewoodBlockBoard": "Tablero de bloques de pino",
+      "fingerJointBoard": "Tablero de junta de dedo",
+      "pinewoodScrap": "Residuos de madera de pino",
+      "oilSeeds": "Semillas oleaginosas",
+      "spices": "Especias",
+      "pulsesAndBeans": "Legumbres y frijoles",
+      "otherCommodities": "Otros productos básicos",
+      "industries": "Industrias"
+    },
+    "privacy": {
+      "title": "Privacidad y cookies",
+      "description": "Utilizamos cookies para mejorar el rendimiento del sitio web y comprender la actividad de los visitantes. Al continuar, usted acepta nuestro uso de cookies.",
+      "accept": "Aceptar",
+      "decline": "Rechazar"
+    },
+    "footer": {
+      "about": "Acerca de Marvel Timber Exporters",
+      "contact": "Contáctenos",
+      "services": "Servicios",
+      "quality": "Calidad y cumplimiento",
+      "suppyNetwork": "Red de suministro",
+      "rights": "Todos los derechos reservados.",
+      "company": "Marvel Timber Exporters"
+    },
+    "hero": {
+      "title": "Soluciones premium de madera y productos agrícolas globales",
+      "subtitle": "Proveedor confiable de madera premium y productos agrícolas para mercados internacionales",
+      "cta": "Explora nuestros productos"
+    },
+    "features": {
+      "quality": "Calidad Premium",
+      "reliable": "Suministro confiable",
+      "efficient": "Entrega eficiente",
+      "certified": "Certificado y conforme"
+    },
+    "pages": {
+      "home": "Inicio | Marvel Timber Exporters",
+      "products": "Productos | Marvel Timber Exporters",
+      "services": "Servicios | Marvel Timber Exporters",
+      "about": "Acerca de | Marvel Timber Exporters",
+      "contact": "Contacto | Marvel Timber Exporters",
+      "quality": "Calidad y cumplimiento | Marvel Timber Exporters",
+      "supply": "Red de suministro | Marvel Timber Exporters",
+      "insights": "Perspectivas | Marvel Timber Exporters",
+      "industries": "Industrias | Marvel Timber Exporters"
+    }
+  }
+}

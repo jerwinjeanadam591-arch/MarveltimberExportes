@@ -44,7 +44,7 @@
     </div>
     <div class="top-strip">
       <div class="container top-strip-inner">
-        <span>Global timber and agro supply solutions</span>
+        <span data-i18n="header.topstrip">Global timber and agro supply solutions</span>
         <div class="top-strip-links">
           <a href="tel:+255758458404">+255 758 458 404</a>
           <a href="mailto:marveltimberexporters@gmail.com">marveltimberexporters@gmail.com</a>
@@ -64,10 +64,10 @@
           </div>
         </a>
         <nav class="main-nav" aria-label="Main navigation">
-          <a href="index.html">Home</a>
+          <a href="index.html" data-i18n="nav.home">Home</a>
 
           <div class="nav-dropdown">
-            <button type="button" class="nav-toggle">Products <span>▾</span></button>
+            <button type="button" class="nav-toggle" data-i18n="nav.products">Products <span>▾</span></button>
             <div class="dropdown-menu product-menu">
               <div class="product-group">
                 <p class="product-group-title">Overview</p>
@@ -147,14 +147,14 @@
           <div class="nav-dropdown language-dropdown">
             <button type="button" class="nav-toggle" aria-label="Choose language">Language <span>▾</span></button>
             <div class="dropdown-menu language-menu">
-              <a href="index.html" class="lang-option is-current">English</a>
-              <a href="#" class="lang-option" aria-disabled="true">Français</a>
-              <a href="#" class="lang-option" aria-disabled="true">العربية</a>
-              <a href="#" class="lang-option" aria-disabled="true">Deutsch</a>
-              <a href="#" class="lang-option" aria-disabled="true">Español</a>
+              <a href="#" class="lang-option is-current" data-lang="en">English</a>
+              <a href="#" class="lang-option" data-lang="fr">Français</a>
+              <a href="#" class="lang-option" data-lang="ar">العربية</a>
+              <a href="#" class="lang-option" data-lang="de">Deutsch</a>
+              <a href="#" class="lang-option" data-lang="es">Español</a>
             </div>
           </div>
-          <a href="contact.html" class="btn-nav">Request Quote</a>
+          <a href="contact.html" class="btn-nav" data-i18n="nav.requestQuote">Request Quote</a>
 
         </nav>
         <button class="mobile-btn" type="button" aria-label="Toggle menu"><span></span><span></span><span></span></button>
@@ -162,7 +162,7 @@
     </header>
     <div class="mobile-panel" aria-hidden="true">
       <div class="mobile-links">
-        <a href="index.html">Home</a>
+        <a href="index.html" data-i18n="nav.home">Home</a>
         <a href="products.html">Products</a>
         <a href="index.html#services">Services</a>
         <a href="index.html#industries">Industries</a>
@@ -356,7 +356,7 @@
         <div>
           <h4>Company</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -397,5 +397,6 @@
 
     <script src="scripts.js"></script>
     <script src="support/chatbot.js"></script>
+      <script src="/support/translation.js"></script>
   </body>
 </html>
