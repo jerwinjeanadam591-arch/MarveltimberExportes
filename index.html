@@ -28,8 +28,20 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="support/chatbot.css" />
     <link rel="stylesheet" href="support/force-mobile.css" />
+    <link rel="stylesheet" href="support/lead-modal.css" />
+
+    <!-- Analytics placeholder: replace G-XXXXXXX with your GA4 Measurement ID to enable -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXX');
+    </script>
 
     <!-- Organization structured data (replace url with your live domain) -->
+    <!-- preload hero image as webp first (if available) -->
+    <link rel="preload" href="mavo-images/hero/agri1.webp" as="image" type="image/webp" onerror="this.remove()">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -224,8 +236,8 @@
             </p>
 
             <div class="hero-actions">
-              <a href="contact.html" class="btn-primary">Request Samples</a>
-              <a href="products.html" class="btn-secondary">Explore Products</a>
+              <a href="products.html" class="btn-primary" data-i18n="hero.cta">Explore Our Products</a>
+              <button class="btn-secondary" data-open-lead data-i18n="hero.secondaryCta">Request Quote</button>
             </div>
           </div>
 
@@ -781,5 +793,7 @@
     <script src="scripts.js"></script>
     <script src="support/chatbot.js"></script>
       <script src="/support/translation.js"></script>
+      <script src="/support/lead-modal.js"></script>
+    <script src="/support/translation.js"></script>
   </body>
 </html>

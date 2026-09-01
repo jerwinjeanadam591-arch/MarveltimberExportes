@@ -55,7 +55,18 @@
     "hero": {
       "title": "Premium Global Timber & Agro Solutions",
       "subtitle": "Trusted supplier of premium timber and agricultural products to international markets",
-      "cta": "Explore Our Products"
+      "cta": "Explore Our Products",
+      "secondaryCta": "Request Quote"
+    },
+    "lead": {
+      "title": "Request a Quote",
+      "subtitle": "Tell us what you need and we'll follow up within one business day.",
+      "company": "Company name",
+      "name": "Full name",
+      "email": "Email address",
+      "message": "Project details, quantity, destination...",
+      "cancel": "Cancel",
+      "submit": "Send Request"
     },
     "features": {
       "quality": "Premium Quality",
@@ -131,7 +142,18 @@
     "hero": {
       "title": "Solutions premium de bois et produits agricoles mondiaux",
       "subtitle": "Fournisseur de confiance de bois premium et produits agricoles vers les marchés internationaux",
-      "cta": "Explorer nos produits"
+      "cta": "Explorer nos produits",
+      "secondaryCta": "Demander un devis"
+    },
+    "lead": {
+      "title": "Demander un devis",
+      "subtitle": "Dites-nous ce dont vous avez besoin et nous vous répondrons sous un jour ouvrable.",
+      "company": "Nom de l'entreprise",
+      "name": "Nom complet",
+      "email": "Adresse e-mail",
+      "message": "Détails du projet, quantité, destination...",
+      "cancel": "Annuler",
+      "submit": "Envoyer la demande"
     },
     "features": {
       "quality": "Qualité Premium",
@@ -207,7 +229,18 @@
     "hero": {
       "title": "حلول الأخشاب والمنتجات الزراعية العالمية المتميزة",
       "subtitle": "مورد موثوق من الأخشاب المتميزة والمنتجات الزراعية للأسواق الدولية",
-      "cta": "استكشف منتجاتنا"
+      "cta": "استكشف منتجاتنا",
+      "secondaryCta": "طلب عرض أسعار"
+    },
+    "lead": {
+      "title": "طلب عرض أسعار",
+      "subtitle": "أخبرنا بما تحتاجه وسنوافيك بالرد خلال يوم عمل واحد.",
+      "company": "اسم الشركة",
+      "name": "الاسم الكامل",
+      "email": "البريد الإلكتروني",
+      "message": "تفاصيل المشروع، الكمية، الوجهة...",
+      "cancel": "إلغاء",
+      "submit": "إرسال الطلب"
     },
     "features": {
       "quality": "جودة متميزة",
@@ -283,7 +316,18 @@
     "hero": {
       "title": "Premium-Holz- und Agrarproduktlösungen weltweit",
       "subtitle": "Vertrauenswürdiger Anbieter von Premium-Holz und Agrarprodukten für internationale Märkte",
-      "cta": "Erkunden Sie unsere Produkte"
+      "cta": "Erkunden Sie unsere Produkte",
+      "secondaryCta": "Angebot anfordern"
+    },
+    "lead": {
+      "title": "Angebot anfordern",
+      "subtitle": "Teilen Sie uns Ihre Anforderungen mit – wir melden uns innerhalb eines Werktages.",
+      "company": "Firmenname",
+      "name": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "message": "Projektdetails, Menge, Zielort...",
+      "cancel": "Abbrechen",
+      "submit": "Anfrage senden"
     },
     "features": {
       "quality": "Premium-Qualität",
