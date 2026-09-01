@@ -1,0 +1,128 @@
+{
+  "faq": [
+    {
+      "keywords": ["teakwood", "teak", "premium hardwood"],
+      "response": "Teakwood is our premium hardwood for luxury interiors, joinery, and furniture applications. It's known for durability and beautiful finish. Would you like pricing, specifications, or samples?"
+    },
+    {
+      "keywords": ["pinewood", "pine", "softwood", "construction"],
+      "response": "Pinewood is a reliable softwood perfect for construction, packaging, and panel manufacturing. We offer multiple grades. What specific dimensions or quantities do you need?"
+    },
+    {
+      "keywords": ["core veneer", "veneer", "decorative"],
+      "response": "Our core veneer is premium decorative material for interior finishes and furniture. Consistent quality, export-ready. Do you need a quote or samples?"
+    },
+    {
+      "keywords": ["block board", "engineered", "plywood"],
+      "response": "Pine block board is engineered for cabinetry, partitions, and interior fit-outs. Dimensionally stable and efficient for manufacturing. How many sheets do you need?"
+    },
+    {
+      "keywords": ["finger joint board", "engineered panel"],
+      "response": "Finger joint board offers precision-engineered stability for smooth finishes and efficient manufacturing. Perfect for quality-conscious buyers. What's your project scope?"
+    },
+    {
+      "keywords": ["saw milling", "milling service", "sawmill"],
+      "response": "We offer professional saw milling services for custom cuts and specifications. We can process logs to your exact dimensions. What timber type and sizes do you need?"
+    },
+    {
+      "keywords": ["kiln drying", "drying", "moisture"],
+      "response": "Our kiln drying service ensures export-ready moisture levels and quality standards. Perfect for premium finishes. Do you need drying services for your timber?"
+    },
+    {
+      "keywords": ["planing", "finishing", "surface finish"],
+      "response": "Planing and finishing services provide smooth, polished surfaces ready for direct use. Enhances value and quality. How much timber do you need finished?"
+    },
+    {
+      "keywords": ["export logistics", "shipping", "export", "transport"],
+      "response": "We handle complete export logistics with full documentation. Phytosanitary certified, on-time delivery to any destination. Where are you located, and when do you need delivery?"
+    },
+    {
+      "keywords": ["wheat", "grain", "agro", "commodity"],
+      "response": "We supply export-quality wheat for mills and processors. Certified, bulk supply available. What volume and delivery timeline do you need?"
+    },
+    {
+      "keywords": ["rice", "white rice", "parboiled"],
+      "response": "Premium white and parboiled rice, export-ready for international distribution. Consistent quality. How many tons are you looking for?"
+    },
+    {
+      "keywords": ["sesame", "seeds", "spices"],
+      "response": "Premium natural sesame seeds for food and industrial export markets. 100% organic certified. What's your required quantity and destination?"
+    },
+    {
+      "keywords": ["maize", "corn", "animal feed"],
+      "response": "Reliable maize supply for milling and regional processing. Quality assured. Do you need bulk supply or custom grades?"
+    },
+    {
+      "keywords": ["oil seeds", "seeds"],
+      "response": "We supply various oil seeds meeting export standards. Certified and documented. Which type and how much do you need?"
+    },
+    {
+      "keywords": ["spices", "pepper", "black pepper"],
+      "response": "Premium spices including black pepper and natural seasonings. Export certified, bulk available. What spice type interests you?"
+    },
+    {
+      "keywords": ["pulses", "beans", "legumes"],
+      "response": "Quality pulses and beans for food processing and distribution. Fully certified. What variety and volume do you need?"
+    },
+    {
+      "keywords": ["quote", "pricing", "price", "cost"],
+      "response": "I'd love to get you a quote! Please tell me: 1) Product type (teakwood, pinewood, wheat, etc.) 2) Quantity needed 3) Destination country. Or WhatsApp us: +255 758 458 404"
+    },
+    {
+      "keywords": ["payment", "terms", "invoice", "credit"],
+      "response": "We work with flexible payment terms depending on order size and relationship. Let's discuss your specific needs. Contact us at +255 758 458 404 or marveltimberexporters@gmail.com"
+    },
+    {
+      "keywords": ["quality", "certification", "phytosanitary", "certified", "compliance"],
+      "response": "All our products are phytosanitary certified with full export documentation. 100% organic agro products. Quality checks on every shipment. Learn more: marveltimber.co.tz/quality-compliance.html"
+    },
+    {
+      "keywords": ["delivery", "timeline", "when", "how long", "lead time"],
+      "response": "Delivery timelines depend on product and destination: Standard (21-30 days) or Express (10-14 days). Full documentation included. Where are you based?"
+    },
+    {
+      "keywords": ["contact", "phone", "email", "address"],
+      "response": "📞 Phone: +255 758 458 404\n📧 Email: marveltimberexporters@gmail.com\n📍 Location: Mafinga, Iringa Region, Tanzania\n💬 WhatsApp: +255 758 458 404"
+    },
+    {
+      "keywords": ["location", "address", "where", "mafinga"],
+      "response": "We're based in Mafinga, Iringa Region, Tanzania. This location gives us direct access to premium timber sources and agricultural commodities. We welcome factory visits for serious buyers!"
+    },
+    {
+      "keywords": ["bulk supply", "large order", "wholesale"],
+      "response": "We specialize in bulk supply for wholesale buyers and manufacturers. Flexible lot sizes, consistent quality, export-ready. What volume and timeline are you looking for?"
+    },
+    {
+      "keywords": ["samples", "sample", "test"],
+      "response": "Yes! We can send samples of timber or agro products. Just tell us what interests you and we'll ship samples with details. Contact: +255 758 458 404 or marveltimberexporters@gmail.com"
+    },
+    {
+      "keywords": ["international", "export", "overseas", "global"],
+      "response": "We export to buyers across Africa, Asia, Europe, Americas, and Middle East. Full compliance with international standards. Phytosanitary certified. Which country are you in?"
+    },
+    {
+      "keywords": ["factory", "visit", "tour", "production"],
+      "response": "Serious buyers can visit our facilities in Mafinga. We offer factory tours and can discuss custom orders. Please WhatsApp +255 758 458 404 to arrange a visit."
+    },
+    {
+      "keywords": ["documentation", "certificate", "export document"],
+      "response": "Full export documentation included: phytosanitary certificates, quality reports, invoices, and shipping docs. Everything needed for customs clearance."
+    },
+    {
+      "keywords": ["insurance", "guarantee", "warranty"],
+      "response": "On-time delivery guarantee. Quality assured on every shipment with inspection reports. Let's discuss your specific requirements: +255 758 458 404"
+    },
+    {
+      "keywords": ["urgent", "rush", "asap", "emergency"],
+      "response": "We can arrange express delivery for urgent orders. Contact us immediately at +255 758 458 404 to discuss urgency and feasibility."
+    },
+    {
+      "keywords": ["thank", "thanks", "thanks for", "appreciated"],
+      "response": "You're welcome! We're here to help. Need anything else about our products or services?"
+    },
+    {
+      "keywords": ["hello", "hi", "hey", "greetings"],
+      "response": "Hello! Welcome to Marvel Timber Exporters. 👋 I'm here to help with questions about our timber, agro products, services, and exports. What can I help you with?"
+    }
+  ]
+}
