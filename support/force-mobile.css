@@ -1,0 +1,117 @@
+/* Force mobile-like single-column layout across all viewport widths */
+/* This makes desktop display similar to mobile to prevent horizontal scrolling */
+
+html, body {
+  overflow-x: hidden !important;
+}
+
+/* Narrow container to mobile-like width */
+.container {
+  width: calc(100% - 32px) !important;
+  max-width: 720px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Stack header elements vertically like mobile */
+.nav-wrap {
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 0.4rem !important;
+  min-height: auto !important;
+}
+
+.brand {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0.35rem 0 !important;
+}
+
+.main-nav {
+  width: 100% !important;
+  order: 2 !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  flex-wrap: wrap !important;
+  gap: 0.25rem !important;
+  margin-top: 0.35rem !important;
+  padding: 0.2rem 0.32rem !important;
+}
+
+.main-nav a,
+.nav-toggle {
+  padding: 0.5rem 0.7rem !important;
+  font-size: 0.95rem !important;
+}
+
+/* Ensure dropdowns flow within document flow instead of absolute positioned popovers */
+.dropdown-menu {
+  position: static !important;
+  width: 100% !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: none !important;
+  box-shadow: none !important;
+  border-radius: 12px !important;
+  margin-top: 0.35rem !important;
+}
+
+.product-menu {
+  grid-template-columns: 1fr !important;
+  width: 100% !important;
+}
+
+/* Hero becomes single column */
+.hero {
+  min-height: auto !important;
+  padding-bottom: 1.5rem !important;
+}
+
+.hero-inner {
+  display: block !important;
+  grid-template-columns: none !important;
+  padding: 1.5rem 0 !important;
+}
+
+.hero-side {
+  position: static !important;
+  width: 100% !important;
+  justify-items: start !important;
+  margin-top: 1rem !important;
+}
+
+.hero-copy h1 {
+  max-width: 100% !important;
+  text-align: left !important;
+}
+
+/* Make all grids collapse to single column where applicable */
+.product-group, .product-menu, .about-menu, .contact-menu, .about-menu-card {
+  width: 100% !important;
+}
+
+/* Prevent wide fixed widths from causing horizontal scroll */
+* {
+  max-width: 100% !important;
+}
+
+img, video, iframe {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Mobile-like navigation panel visible */
+.mobile-btn { display: block !important; }
+.mobile-panel { display: block !important; }
+
+/* Reduce padding on sections to avoid overflow */
+section, .section, .container { padding-left: 16px !important; padding-right: 16px !important; }
+
+/* Ensure chat widget doesn't cause horizontal overflow */
+#marvel-chat-widget { left: 1.5rem !important; right: auto !important; }
+
+/* Final safety: hide accidental horizontal overflow on body */
+body { overflow-x: hidden !important; }
