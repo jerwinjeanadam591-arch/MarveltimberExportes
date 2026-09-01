@@ -733,20 +733,49 @@ button, input, textarea {
 .hero-copy h1 {
   margin: 1.2rem 0 1rem;
   font-family: var(--serif);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.02;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   color: #fff;
-  /* reduced scale so headline fits to the right-side column and reads cleanly */
-  font-size: clamp(2.4rem, 4.6vw, 4.2rem);
+  font-size: clamp(2.6rem, 5.4vw, 4.6rem);
   max-width: 60ch;
   text-align: left;
   margin-left: 0;
   margin-right: auto;
-  text-shadow: 0 10px 26px rgba(0,0,0,0.20);
+  text-shadow: 0 12px 32px rgba(0,0,0,0.28);
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.45s ease, transform 0.45s ease;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Hero headline static and typed styling */
+.hero-headline {
+  display: inline-block;
+  color: #fff;
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.hero-sub { color: rgba(255,255,255,0.95); font-weight:600; font-size:0.86em }
+
+.typed-text {
+  display: inline-block;
+  border-right: 0.12em solid rgba(255,255,255,0.85);
+  padding-right: 0.08em;
+  min-width: 6ch;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+/* smoother caret blink using opacity animation */
+.typed-text.typing { animation: caretBlink 1s steps(1) infinite; }
+@keyframes caretBlink { 50% { border-color: rgba(255,255,255,0.0); } }
+
+/* Make typed text wrap gracefully on narrow screens */
+@media (max-width: 640px) {
+  .hero-copy h1 { font-size: clamp(1.8rem, 6.5vw, 2.6rem); }
+  .hero-sub { display:block; margin-top: 0.25rem }
+  .typed-text { border-right: none; padding-right: 0 }
 }
 
 .hero-copy .line {
