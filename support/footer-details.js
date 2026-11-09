@@ -124,4 +124,15 @@
     bottom.append(copyright);
     footer.append(bottom);
   }
+
+  const footerBottom = footer.querySelector('.footer-bottom');
+  if (footerBottom && !footerBottom.querySelector('.footer-credit')) {
+    const credit = document.createElement('a');
+    credit.className = 'footer-credit';
+    credit.href = 'https://digicoretech.co.tz';
+    credit.target = '_blank';
+    credit.rel = 'noopener noreferrer';
+    credit.textContent = 'Developed by DigiCoreTech';
+    footerBottom.append(credit);
+  }
 })();
