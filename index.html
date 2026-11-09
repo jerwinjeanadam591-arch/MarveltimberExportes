@@ -27,8 +27,23 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="support/chatbot.css" />
+    <link rel="stylesheet" href="support/force-mobile.css" />
+    <script defer src="support/mobile-navigation.js"></script>
+    <script defer src="support/footer-details.js"></script>
+    <link rel="stylesheet" href="support/lead-modal.css" />
+
+    <!-- Analytics placeholder: replace G-XXXXXXX with your GA4 Measurement ID to enable -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXX');
+    </script>
 
     <!-- Organization structured data (replace url with your live domain) -->
+    <!-- preload hero image as webp first (if available) -->
+    <link rel="preload" href="mavo-images/hero/agri1.webp" as="image" type="image/webp" onerror="this.remove()">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -54,7 +69,7 @@
     </div>
     <div class="top-strip">
       <div class="container top-strip-inner">
-        <span>Global timber and agro supply solutions</span>
+        <span data-i18n="header.topstrip">Global timber and agro supply solutions</span>
         <div class="top-strip-links">
           <a href="tel:+255758458404">+255 758 458 404</a>
           <a href="tel:+255698783287">+255 698 783 287</a>
@@ -75,10 +90,10 @@
           </div>
         </a>
         <nav class="main-nav" aria-label="Main navigation">
-          <a href="index.html">Home</a>
+          <a href="index.html" data-i18n="nav.home">Home</a>
 
           <div class="nav-dropdown">
-            <button type="button" class="nav-toggle">Products <span>▾</span></button>
+            <button type="button" class="nav-toggle" data-i18n="nav.products">Products <span>▾</span></button>
             <div class="dropdown-menu product-menu">
               <div class="product-group">
                 <p class="product-group-title">Overview</p>
@@ -158,14 +173,14 @@
           <div class="nav-dropdown language-dropdown">
             <button type="button" class="nav-toggle" aria-label="Choose language">Language <span>▾</span></button>
             <div class="dropdown-menu language-menu">
-              <a href="index.html" class="lang-option is-current">English</a>
-              <a href="#" class="lang-option" aria-disabled="true">Français</a>
-              <a href="#" class="lang-option" aria-disabled="true">العربية</a>
-              <a href="#" class="lang-option" aria-disabled="true">Deutsch</a>
-              <a href="#" class="lang-option" aria-disabled="true">Español</a>
+              <a href="#" class="lang-option is-current" data-lang="en">English</a>
+              <a href="#" class="lang-option" data-lang="fr">Français</a>
+              <a href="#" class="lang-option" data-lang="ar">العربية</a>
+              <a href="#" class="lang-option" data-lang="de">Deutsch</a>
+              <a href="#" class="lang-option" data-lang="es">Español</a>
             </div>
           </div>
-          <a href="contact.html" class="btn-nav">Request Quote</a>
+          <a href="contact.html" class="btn-nav" data-i18n="nav.requestQuote">Request Quote</a>
 
         </nav>
 
@@ -176,7 +191,7 @@
     </header>
     <div class="mobile-panel" aria-hidden="true">
       <div class="mobile-links">
-        <a href="index.html">Home</a>
+        <a href="index.html" data-i18n="nav.home">Home</a>
         <a href="products.html">Products</a>
         <a href="index.html#services">Services</a>
         <a href="index.html#industries">Industries</a>
@@ -212,10 +227,9 @@
               <span id="hero-tagline">Premium Timber &amp; Agro Exporters</span>
             </div>
 
-            <h1 id="hero-title" aria-label="Premium Timber Products for Construction, Furniture and Industry">
-              <span class="line typed-line" id="hero-line-1"><span class="typed-content">Premium Timber Products</span></span>
-              <span class="line typed-line" id="hero-line-2"><span class="typed-content">for Construction,<em> Furniture</em> &amp; Industry</span></span>
-              <span class="line typed-line" id="hero-line-3"><span class="typed-content">Built for global buyers</span></span>
+            <h1 id="hero-title" aria-label="Premium Timber for Construction, Furniture — Built for global buyers">
+              <span class="hero-headline">Premium Timber</span>
+              <span class="hero-sub">&nbsp;<span class="typed-text" data-typed='["for Construction","for Furniture","for Industry","Built for global buyers"]' aria-hidden="true"></span></span>
             </h1>
 
             <p id="hero-summary">
@@ -223,8 +237,8 @@
             </p>
 
             <div class="hero-actions">
-              <a href="contact.html" class="btn-primary">Request Samples</a>
-              <a href="products.html" class="btn-secondary">Explore Products</a>
+              <a href="products.html" class="btn-primary" data-i18n="hero.cta">Explore Our Products</a>
+              <button class="btn-secondary" data-open-lead data-i18n="hero.secondaryCta">Request Quote</button>
             </div>
           </div>
 
@@ -280,7 +294,6 @@
       <section class="signature-shell">
         <div class="container signature-layout">
           <div class="signature-story">
-          <span class="section-tag">Why importers choose Marvel</span>
             <h2>More than supply — a steady export partner.</h2>
             <p>
               We blend sourcing discipline, product consistency and responsive communication into a buying experience designed for international procurement teams.
@@ -427,7 +440,8 @@
               <div class="feature-content">
                 <div class="feature-icon">C</div>
                 <h3>Construction &amp; Joinery</h3>
-                <p>Structural timber, panel products and dependable dispatch for contractors and project buyers.</p>
+                <p>Reliable timber and panels for building and joinery projects.</p>
+                <a class="card-read-more" href="industries.html#construction">Read more <span aria-hidden="true">→</span></a>
               </div>
             </article>
             <article class="feature-card" id="furniture">
@@ -437,7 +451,8 @@
               <div class="feature-content">
                 <div class="feature-icon">F</div>
                 <h3>Furniture &amp; Interior</h3>
-                <p>Premium hardwoods and veneer materials selected for interior fit-outs and furniture manufacturing.</p>
+                <p>Quality hardwoods and veneers for furniture and interiors.</p>
+                <a class="card-read-more" href="industries.html#furniture">Read more <span aria-hidden="true">→</span></a>
               </div>
             </article>
             <article class="feature-card" id="agro-processing">
@@ -447,7 +462,8 @@
               <div class="feature-content">
                 <div class="feature-icon">A</div>
                 <h3>Agro Processing</h3>
-                <p>Food-grade grains and edible commodities shipped with documentation and supply continuity.</p>
+                <p>Export-ready grains and food commodities with clear documentation.</p>
+                <a class="card-read-more" href="industries.html#agro-processing">Read more <span aria-hidden="true">→</span></a>
               </div>
             </article>
             <article class="feature-card" id="retail-distribution">
@@ -457,7 +473,8 @@
               <div class="feature-content">
                 <div class="feature-icon">R</div>
                 <h3>Retail &amp; Distribution</h3>
-                <p>Flexible lot sizes, consistent product quality and export-ready support for wholesale buyers.</p>
+                <p>Flexible order sizes and dependable supply for wholesale buyers.</p>
+                <a class="card-read-more" href="industries.html#retail-distribution">Read more <span aria-hidden="true">→</span></a>
               </div>
             </article>
           </div>
@@ -491,7 +508,8 @@
               </div>
               <div class="product-body">
                 <h3>Teakwood</h3>
-                <p>Premium hardwood for luxury interiors, joinery and furniture applications.</p>
+              <p>Premium hardwood for furniture, joinery and interiors.</p>
+              <a class="card-read-more" href="teakwood.html">Read more <span aria-hidden="true">→</span></a>
               </div>
             </article>
 
@@ -501,7 +519,8 @@
               </div>
               <div class="product-body">
                 <h3>African Mahogany</h3>
-                <p>Rich, durable hardwood prized for premium furniture and architectural finishing.</p>
+              <p>Durable hardwood for fine furniture and architectural finishes.</p>
+              <a class="card-read-more" href="teakwood.html">Read more <span aria-hidden="true">→</span></a>
               </div>
             </article>
 
@@ -514,7 +533,8 @@
               </div>
               <div class="product-body">
                 <h3>Pinewood</h3>
-                <p>Reliable softwood for construction, packaging and panel manufacturing.</p>
+              <p>Versatile softwood for construction, panels and packaging.</p>
+              <a class="card-read-more" href="pinewood.html">Read more <span aria-hidden="true">→</span></a>
               </div>
             </article>
 
@@ -524,7 +544,8 @@
               </div>
               <div class="product-body">
                 <h3>Pine Block Board</h3>
-                <p>Consistent panel product for cabinetry, partitions and interior fit-outs.</p>
+              <p>Stable panel stock for cabinetry and interior projects.</p>
+              <a class="card-read-more" href="pinewood-block-board.html">Read more <span aria-hidden="true">→</span></a>
               </div>
             </article>
 
@@ -537,7 +558,8 @@
               </div>
               <div class="product-body">
                 <h3>Core Veneer</h3>
-                <p>High-value veneer selected for beauty, durability and premium finishing.</p>
+              <p>Consistent veneer sheets for panel and interior applications.</p>
+              <a class="card-read-more" href="core-veneer.html">Read more <span aria-hidden="true">→</span></a>
               </div>
             </article>
 
@@ -547,7 +569,8 @@
               </div>
               <div class="product-body">
                 <h3>Finger Joint Board</h3>
-                <p>Precision-made engineered panel material for efficient manufacturing and smooth finishes.</p>
+              <p>Precision-joined timber for efficient manufacturing.</p>
+              <a class="card-read-more" href="finger-joint-board.html">Read more <span aria-hidden="true">→</span></a>
               </div>
             </article>
 
@@ -557,7 +580,8 @@
               </div>
               <div class="product-body">
                 <h3>Sapele Wood</h3>
-                <p>Distinctive hardwood selected for premium joinery, furniture and architectural applications.</p>
+              <p>Distinctive hardwood for furniture and premium joinery.</p>
+              <a class="card-read-more" href="teakwood.html">Read more <span aria-hidden="true">→</span></a>
               </div>
             </article>
 
@@ -567,7 +591,8 @@
               </div>
               <div class="product-body">
                 <h3>Decorative Veneer</h3>
-                <p>Elegant surface material for premium interiors, paneling and finished wood products.</p>
+              <p>Decorative veneer for refined interiors and panels.</p>
+              <a class="card-read-more" href="core-veneer.html">Read more <span aria-hidden="true">→</span></a>
               </div>
             </article>
           </div>
@@ -578,22 +603,43 @@
         <div class="container">
           <div class="feature-grid four-up quality-grid">
             <article class="feature-card">
-              <div class="feature-icon">A</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3 19 6v5c0 4.7-3 8-7 10-4-2-7-5.3-7-10V6l7-3Z"/>
+                  <path d="m9 12 2 2 4-4"/>
+                </svg>
+              </div>
               <h3>Quality assurance</h3>
               <p>Every shipment is checked for grade, consistency and export-ready standards.</p>
             </article>
             <article class="feature-card">
-              <div class="feature-icon">S</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 4c-8 0-13 3.2-13 9a5 5 0 0 0 5 5c5.8 0 8-6 8-14Z"/>
+                  <path d="M4 21c2-5 5-8 10-11"/>
+                </svg>
+              </div>
               <h3>Responsible sourcing</h3>
               <p>We work with trusted suppliers and transparent sourcing practices.</p>
             </article>
             <article class="feature-card">
-              <div class="feature-icon">P</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19V9l4 3V8l5 4V5h7v14H4Z"/>
+                  <path d="M8 16h.01M12 16h.01M16 16h.01"/>
+                </svg>
+              </div>
               <h3>Processing capability</h3>
               <p>Support for cutting, drying and coordinated export preparation.</p>
             </article>
             <article class="feature-card">
-              <div class="feature-icon">D</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 7h11v11H3zM14 11h4l3 3v4h-7z"/>
+                  <circle cx="7.5" cy="18" r="1.7"/>
+                  <circle cx="17.5" cy="18" r="1.7"/>
+                </svg>
+              </div>
               <h3>Dependable delivery</h3>
               <p>Efficient logistics coordination for consistent, on-time dispatch.</p>
             </article>
@@ -692,11 +738,22 @@
           </div>
 
           <div class="world-grid">
-            <div class="world-card"><img class="continent-flag" src="mavo-images/continent_flag_icons/africa.svg" alt="Africa icon" loading="lazy"/><span>Africa</span></div>
-            <div class="world-card"><img class="continent-flag" src="mavo-images/continent_flag_icons/asia.svg" alt="Asia icon" loading="lazy"/><span>Asia</span></div>
-            <div class="world-card"><img class="continent-flag" src="mavo-images/continent_flag_icons/europe.svg" alt="Europe icon" loading="lazy"/><span>Europe</span></div>
-            <div class="world-card"><img class="continent-flag" src="mavo-images/continent_flag_icons/americas.svg" alt="Americas icon" loading="lazy"/><span>Americas</span></div>
-            <div class="world-card"><img class="continent-flag" src="mavo-images/continent_flag_icons/middle-east.svg" alt="Middle East icon" loading="lazy"/><span>Middle East</span></div>
+            <div class="continent-track">
+              <div class="continent-run">
+                <div class="world-card"><img class="continent-flag" src="mavo-images/continent_flag_icons/africa.svg" alt="Africa icon" loading="lazy"/><span>Africa</span></div>
+                <div class="world-card"><img class="continent-flag" src="mavo-images/continent_flag_icons/asia.svg" alt="Asia icon" loading="lazy"/><span>Asia</span></div>
+                <div class="world-card"><img class="continent-flag" src="mavo-images/continent_flag_icons/europe.svg" alt="Europe icon" loading="lazy"/><span>Europe</span></div>
+                <div class="world-card"><img class="continent-flag" src="mavo-images/continent_flag_icons/americas.svg" alt="Americas icon" loading="lazy"/><span>Americas</span></div>
+                <div class="world-card"><img class="continent-flag" src="mavo-images/continent_flag_icons/middle-east.svg" alt="Middle East icon" loading="lazy"/><span>Middle East</span></div>
+              </div>
+              <div class="continent-run" aria-hidden="true">
+                <div class="world-card"><img class="continent-flag" src="mavo-images/continent_flag_icons/africa.svg" alt="" loading="lazy"/><span>Africa</span></div>
+                <div class="world-card"><img class="continent-flag" src="mavo-images/continent_flag_icons/asia.svg" alt="" loading="lazy"/><span>Asia</span></div>
+                <div class="world-card"><img class="continent-flag" src="mavo-images/continent_flag_icons/europe.svg" alt="" loading="lazy"/><span>Europe</span></div>
+                <div class="world-card"><img class="continent-flag" src="mavo-images/continent_flag_icons/americas.svg" alt="" loading="lazy"/><span>Americas</span></div>
+                <div class="world-card"><img class="continent-flag" src="mavo-images/continent_flag_icons/middle-east.svg" alt="" loading="lazy"/><span>Middle East</span></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -779,5 +836,77 @@
 
     <script src="scripts.js"></script>
     <script src="support/chatbot.js"></script>
+    <script src="/support/lead-modal.js"></script>
+    <script src="/support/hero-typing.js"></script>
+    <script>
+// Inline fallback for hero typing animation to ensure it runs even if external script is blocked or delayed
+(function(){
+  function sleep(ms){return new Promise(r=>setTimeout(r, ms));}
+
+  function createTyper(el){
+    let items = [];
+    try{ items = JSON.parse(el.getAttribute('data-typed')) }catch(e){ items = [el.textContent.trim()] }
+    if(!items || !items.length) return null;
+
+    let index = 0;
+    const typingSpeed = parseInt(el.getAttribute('data-typing-speed')) || 45;
+    const pauseAfter = parseInt(el.getAttribute('data-pause-after')) || 1200;
+    const pauseBetween = parseInt(el.getAttribute('data-pause-between')) || 400;
+    const deletingSpeed = parseInt(el.getAttribute('data-deleting-speed')) || 25;
+    let running = true;
+
+    el.setAttribute('aria-live','polite');
+    el.classList.add('typing');
+
+    async function run(){
+      while(running){
+        const text = items[index % items.length] || '';
+        for(let i=0;i<=text.length;i++){
+          el.textContent = text.slice(0,i);
+          await sleep(typingSpeed);
+          if(!running) return;
+        }
+        await sleep(pauseAfter);
+        if(!running) return;
+        for(let i=text.length;i>=0;i--){
+          el.textContent = text.slice(0,i);
+          await sleep(deletingSpeed);
+          if(!running) return;
+        }
+        await sleep(pauseBetween);
+        index++;
+      }
+    }
+
+    run().catch(()=>{});
+
+    return { stop(){ running = false; } };
+  }
+
+  function startAll(){
+    const els = document.querySelectorAll('.typed-text');
+    if(!els.length) return;
+
+    els.forEach(el => {
+      if(el.__typer) return;
+      el.__typer = createTyper(el);
+      const mo = new MutationObserver((records)=>{
+        for(const r of records){
+          if(r.type === 'attributes' && r.attributeName === 'data-typed'){
+            if(el.__typer && el.__typer.stop) el.__typer.stop();
+            el.__typer = createTyper(el);
+          }
+        }
+      });
+      mo.observe(el, { attributes: true });
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', ()=>{ startAll(); setTimeout(startAll,600);} );
+  } else { startAll(); setTimeout(startAll,600); }
+})();
+    </script>
+    <script src="/support/translation.js"></script>
   </body>
 </html>

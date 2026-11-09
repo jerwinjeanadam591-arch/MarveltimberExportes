@@ -733,20 +733,49 @@ button, input, textarea {
 .hero-copy h1 {
   margin: 1.2rem 0 1rem;
   font-family: var(--serif);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.02;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   color: #fff;
-  /* reduced scale so headline fits to the right-side column and reads cleanly */
-  font-size: clamp(2.4rem, 4.6vw, 4.2rem);
+  font-size: clamp(2.6rem, 5.4vw, 4.6rem);
   max-width: 60ch;
   text-align: left;
   margin-left: 0;
   margin-right: auto;
-  text-shadow: 0 10px 26px rgba(0,0,0,0.20);
+  text-shadow: 0 12px 32px rgba(0,0,0,0.28);
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.45s ease, transform 0.45s ease;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Hero headline static and typed styling */
+.hero-headline {
+  display: inline-block;
+  color: #fff;
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.hero-sub { color: rgba(255,255,255,0.95); font-weight:600; font-size:0.86em }
+
+.typed-text {
+  display: inline-block;
+  border-right: 0.12em solid rgba(255,255,255,0.85);
+  padding-right: 0.08em;
+  min-width: 6ch;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+/* smoother caret blink using opacity animation */
+.typed-text.typing { animation: caretBlink 1s steps(1) infinite; }
+@keyframes caretBlink { 50% { border-color: rgba(255,255,255,0.0); } }
+
+/* Make typed text wrap gracefully on narrow screens */
+@media (max-width: 640px) {
+  .hero-copy h1 { font-size: clamp(1.8rem, 6.5vw, 2.6rem); }
+  .hero-sub { display:block; margin-top: 0.25rem }
+  .typed-text { border-right: none; padding-right: 0 }
 }
 
 .hero-copy .line {
@@ -1266,12 +1295,14 @@ button, input, textarea {
 }
 
 .signature-points li::before {
-  content: "•";
+  content: "";
   position: absolute;
-  left: 0;
-  color: var(--gold);
-  font-size: 1.4rem;
-  line-height: 1;
+  top: 0.65em;
+  left: 0.35rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--gold);
 }
 
 .signature-visual {
@@ -1662,71 +1693,70 @@ body {
 
 .quality-grid .feature-card {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-content: start;
+  align-items: center;
+  gap: 0.9rem 0.8rem;
   height: 100%;
-  min-height: 310px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,243,237,0.96) 100%);
-  border: 1px solid rgba(27, 18, 13, 0.08);
-  border-radius: 24px;
-  box-shadow: 0 18px 34px rgba(33, 22, 16, 0.06);
-  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  min-height: 220px;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid rgba(27, 18, 13, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(33, 22, 16, 0.045);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .quality-grid .feature-card::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 4px;
-  border-radius: 24px 24px 0 0;
-  background: linear-gradient(90deg, rgba(197,149,76,0.95), rgba(237,213,162,0.9), rgba(197,149,76,0.95));
+  content: none;
 }
 
 .quality-grid .feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 22px 42px rgba(33, 22, 16, 0.1);
-  border-color: rgba(154, 93, 56, 0.2);
-}
-
-.quality-grid .feature-content {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1.8rem 1.45rem 1.9rem;
-  width: 100%;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(33, 22, 16, 0.085);
+  border-color: rgba(154, 93, 56, 0.24);
 }
 
 .quality-grid .feature-icon {
   flex-shrink: 0;
-  width: 60px;
-  height: 60px;
-  font-size: 1.12rem;
-  letter-spacing: 0.09em;
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(255,236,181,0.98), rgba(201,149,60,0.18));
-  color: #6d4329;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), 0 12px 22px rgba(154, 93, 56, 0.08);
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #f3eee7;
+  color: #76563a;
   display: grid;
   place-items: center;
 }
 
+.feature-band .quality-grid .feature-icon {
+  background: #f3eee7;
+  box-shadow: none;
+}
+
+.quality-grid .feature-icon svg {
+  width: 25px;
+  height: 25px;
+}
+
 .quality-grid .feature-card h3 {
   margin: 0;
-  font-size: clamp(1.55rem, 2vw, 1.9rem);
-  line-height: 1.2;
+  font-family: var(--sans);
+  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+  line-height: 1.3;
   color: var(--g9);
   word-break: normal;
   overflow-wrap: break-word;
+  letter-spacing: -0.02em;
 }
 
 .quality-grid .feature-card p {
+  grid-column: 1 / -1;
   margin: 0;
-  line-height: 1.8;
+  line-height: 1.6;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   word-break: normal;
   overflow-wrap: break-word;
   max-width: 100%;
@@ -1744,24 +1774,42 @@ body {
 
 @media (max-width: 680px) {
   .quality-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
   }
 
   .quality-grid .feature-card {
     min-height: 0;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 0.6rem;
+    padding: 0.85rem;
+    border-radius: 14px;
   }
 
-  .quality-grid .feature-content {
-    gap: 0.8rem;
-    padding: 1.25rem 1.1rem 1.3rem;
+  .quality-grid .feature-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+  }
+
+  .feature-band .quality-grid .feature-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .quality-grid .feature-icon svg {
+    width: 20px;
+    height: 20px;
   }
 
   .quality-grid .feature-card h3 {
-    font-size: 1.45rem;
+    font-size: 0.9rem;
+    line-height: 1.25;
   }
 
   .quality-grid .feature-card p {
-    font-size: 1rem;
+    font-size: 0.76rem;
+    line-height: 1.45;
   }
 }
 
@@ -1777,15 +1825,15 @@ body {
 
 @media (max-width: 680px) {
   .quality-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
   }
 
   .quality-grid .feature-card {
     min-height: 0;
-  }
-
-  .quality-grid .feature-content {
-    gap: 0.75rem;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 0.6rem;
+    padding: 0.85rem;
   }
 }
 
